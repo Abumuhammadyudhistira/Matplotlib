@@ -1,0 +1,34 @@
+1. Matplotlib
+	import matplotlib.pyplot as plt
+	%matplotlib inline
+	# Basic
+	plt.plot(x,y,'r') #'r' is the color red
+	plt.xlabel('X Axis Title Here')
+	plt.ylabel('Y Axis Title Here')
+	plt.title('String Title Here')
+	plt.show() #It is essential for non-jupyter notebook
+	# Subplot
+	plt.subplot(row,column,plot_number)
+	
+	# Object Oriented Matplotlib
+	fig = plt.figure()
+	axes = fig.add_axes([0.1,0.1,0.8,0.8]) #list of left, bottom, width, height
+	axes.plot(x,y,'b')
+	fig, axes = plt.subplots() # subplots
+	
+	for ax in axes:
+    	ax.plot(x, y, 'b')
+    	ax.set_xlabel('x')
+    	ax.set_ylabel('y')
+    	ax.set_title('title')
+
+	# Display the figure object    
+	fig
+
+	plt.tight_layout()
+	fig = plt.figure(figsize=(8,4),dpi=100)
+	fig.savefig('filename.png',dpi=200) # save
+	ax.legend()
+	plt.scatter(x,y)
+	plt.hist(data)
+	plt.boxplot(data,vert=True,patch_artist=True)
